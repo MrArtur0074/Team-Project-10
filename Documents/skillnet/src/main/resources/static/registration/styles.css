@@ -1,0 +1,132 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3f2a49;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Основной контейнер */
+.registration-wrapper {
+    width: 50%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Заголовок */
+.registration-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Прогресс-бар */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.step {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #6c63ff;
+    color: white;
+}
+.step.active {
+    background-color: #4834d4;
+}
+.step.completed {
+    background-color: #28a745;
+}
+
+/* Белый контейнер формы */
+.registration-container {
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Сетка для полей формы */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.form-group {
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Стили для фокуса */
+input:focus, select:focus {
+    border-color: #6c63ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+/* Кнопки "Вернуться" и "Продолжить" */
+.registration-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.back-btn, .next-btn {
+    background-color: #6c63ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+.back-btn:hover, .next-btn:hover {
+    background-color: #4834d4;
+    transform: scale(1.05);
+}
+
+/* Ссылка "Уже есть аккаунт?" */
+.login-link {
+    font-size: 14px;
+}
+.login-link a {
+    color: #6c63ff;
+    text-decoration: underline;
+}
+.login-link a:hover {
+    color: #4834d4;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .registration-wrapper {
+        width: 90%;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .registration-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

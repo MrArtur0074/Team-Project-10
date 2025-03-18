@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | SkillNet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="registration-wrapper">
+        <h1 class="registration-title">Регистрация</h1>
+
+        <!-- Прогресс-бар шагов -->
+        <div class="steps">
+            <div class="step completed">1. Выбор типа аккаунта</div>
+            <div class="step active">2. Ввод данных</div>
+            <div class="step">3. Подтверждение почты</div>
+        </div>
+
+        <!-- Форма регистрации -->
+        <div class="registration-container">
+            <h2>Этап 2</h2>
+            <p>Заполните данные, чтобы получить доступ к платформе</p>
+
+            <form action="#" method="post" id="register-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="first-name">Имя *</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Введите имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Фамилия *</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Введите фамилию" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Электронная почта *</label>
+                        <input type="email" id="email" name="email" placeholder="Введите почту" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль *</label>
+                        <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                    </div>
+
+                <div class="registration-footer">
+                    <button type="button" class="back-btn">Вернуться</button>
+                    <p class="login-link">Уже есть аккаунт? <a href="#">Войти</a></p>
+                    <button type="submit" class="next-btn">Продолжить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../front.js"></script>
+</body>
+</html>
