@@ -1,43 +1,75 @@
-const API_URL = 'http://localhost:8080/api/auth/register'; // Замените на ваш URL
+const API_URL = 'http://localhost:8080/api/auth';
 
 // Функция для регистрации пользователя
 async function registerUser(userData) {
     try {
-        const response = await fetch(`${API_URL}`, {
+        const response = await fetch(`${API_URL}/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                firstname: userData.firstname,
-                lastname: userData.lastname,
-                email: userData.email,
-                password: userData.password
-            })
+            body: JSON.stringify(userData)
         });
 
-        // Проверка успешного ответа
         if (response.ok) {
             const result = await response.json();
-            console.log('Регистрация успешна:', result);
-            alert('Получилось!'); // Выводим сообщение об успешной регистрации
+            console.log('✅ Регистрация успешна:', result);
+            alert('✅ Регистрация выполнена!');
+
+            // Редирект на main.html после успешной регистрации
+            window.location.href = "../main/main.html";
+
             return result;
         } else {
             const error = await response.json();
-            console.error('Ошибка регистрации:', error);
-            alert('Ошибка при регистрации. Попробуйте снова.');
+            console.error('❌ Ошибка регистрации:', error);
+            alert(`❌ Ошибка при регистрации: ${error.message || 'Попробуйте снова.'}`);
         }
     } catch (error) {
-        console.error('Ошибка при регистрации:', error);
-        alert('Произошла ошибка. Попробуйте позже.');
+        console.error('❌ Ошибка при регистрации:', error);
+        alert('❌ Произошла ошибка. Попробуйте позже.');
     }
 }
 
-// Обработчик формы регистрации
+// Функция для входа пользователя
+async function loginUser(credentials) {
+    try {
+        const response = await fetch(`${API_URL}/authenticate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log('✅ Успешный вход:', result);
+
+            // Сохраняем токен в localStorage
+            localStorage.setItem('token', result.token);
+            alert('✅ Вход выполнен!');
+
+            // Перенаправление на страницу профиля
+            window.location.href = "../main/profile.html";
+        } else {
+            const error = await response.json();
+            console.error('❌ Ошибка входа:', error);
+            alert(`❌ Ошибка входа: ${error.message || 'Неправильный email или пароль.'}`);
+        }
+    } catch (error) {
+        console.error('❌ Ошибка при входе:', error);
+        alert('❌ Ошибка сети. Проверьте подключение.');
+    }
+}
+
+// Обработчик форм регистрации и входа
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("register-form");
-    if (form) {
-        form.addEventListener("submit", async (event) => {
+    const registerForm = document.getElementById("register-form");
+    const loginForm = document.getElementById("login-form");
+
+    if (registerForm) {
+        registerForm.addEventListener("submit", async (event) => {
             event.preventDefault();
 
             const userData = {
@@ -47,8 +79,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 password: document.getElementById("password").value,
             };
 
-            const response = await registerUser(userData);
-            console.log(response);
+            await registerUser(userData);
+        });
+    }
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const credentials = {
+                email: document.getElementById("login-email").value,
+                password: document.getElementById("login-password").value,
+            };
+
+            await loginUser(credentials);
         });
     }
 });
