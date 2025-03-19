@@ -46,12 +46,12 @@ async function loginUser(credentials) {
             const result = await response.json();
             console.log('✅ Успешный вход:', result);
 
-            // Сохраняем токен в localStorage
+
             localStorage.setItem('token', result.token);
             alert('✅ Вход выполнен!');
 
-            // Перенаправление на страницу профиля
-            window.location.href = "../main/profile.html";
+
+            window.location.href = "../main/main.html";
         } else {
             const error = await response.json();
             console.error('❌ Ошибка входа:', error);
@@ -59,11 +59,11 @@ async function loginUser(credentials) {
         }
     } catch (error) {
         console.error('❌ Ошибка при входе:', error);
-        alert('❌ Ошибка сети. Проверьте подключение.');
+        alert('❌ Произошла ошибка. Попробуйте позже.');
     }
 }
 
-// Обработчик форм регистрации и входа
+
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("register-form");
     const loginForm = document.getElementById("login-form");

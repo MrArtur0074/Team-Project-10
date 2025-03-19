@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Друзья</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../main/main.html" class="logo">
+                SkillNet
+            </a>
+            <nav>
+                <ul>
+                    <a href="../main/main.html">
+                        <li>
+                            <img src="../images/main.svg" alt="#">
+                            <span>Главная</span>
+                        </li>
+                    </a>    
+                    <a href="./friends.html">
+                        <li class="bright">
+                            <img src="../images/friends.svg" alt="#">
+                            <span>Друзья</span>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            <img src="../images/activities.svg" alt="#">
+                            <span>Поиск занятий</span>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <img src="../images/forum.svg" alt="#">
+                            <span>Форум</span>
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+            <a href="../../../index.html">
+                <div class="logout">
+                    <a href = '../index.html'><p style="color:white">Выйти</p></a>
+                </div>
+            </a>
+        </header>
+        <div class="main">
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Введите имя пользователя">
+                <div class="loop">
+                    <img src="../images/loop.svg" alt="#" onclick="searchBlocks()">
+                </div>
+            </div>
+            <div class="search-users">
+                <div class="userblank">
+                    <img src="../images/davlet.svg" alt="#">
+                    <div class="usertext">
+                        <h3>Давлет Азимов</h3>
+                        <p>Привет! В твоём профиле указано что ты занимаешься волейболом, го вместе!</p>
+                    </div>
+                </div>
+                <div class="userblank bg2">
+                    <img src="../images/kutman.svg" alt="#">
+                    <div class="usertext">
+                        <h3>Кутманшер Эрмеков</h3>
+                        <p>Привет! В твоём профиле указано что ты занимаешься волейболом, го вместе!</p>
+                    </div>
+                </div>
+                <div class="userblank">
+                    <img src="../images/saku.svg" alt="#">
+                    <div class="usertext">
+                        <h3>Согдиана Асанова</h3>
+                        <p>Привет! В твоём профиле указано что ты занимаешься волейболом, го вместе!</p>
+                    </div>
+                </div>
+                <div class="userblank bg2">
+                    <img src="../images/aktan.svg" alt="#">
+                    <div class="usertext">
+                        <h3>Актан</h3>
+                        <p>Привет! В твоём профиле указано что ты занимаешься волейболом, го вместе!</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function searchBlocks() {
+                    let input = document.getElementById('searchInput').value.toLowerCase();
+                    let blocks = document.querySelectorAll('.userblank');
+        
+                    blocks.forEach(block => {
+                        let text = block.textContent.toLowerCase();
+                        if (text.includes(input)) {
+                            block.classList.remove('hidden');
+                            block.classList.add('highlight');
+                        } else {
+                            block.classList.add('hidden');
+                            block.classList.remove('highlight');
+                        }
+                    });
+                }
+        
+                // Добавляем обработку нажатия Enter в поле поиска
+                document.getElementById('searchInput').addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        searchBlocks();
+                    }
+                });
+            </script>
+        </div>
+        <div class="panel">
+            <div class="profile">
+                <img src="../images/pfp.svg" alt="#">
+                <h1>Актан Раимбеков</h1>
+                <p>Студент колледжа Ала-Тоо</p>
+                <a href="#">
+                    <div class="profile-btn">
+                        <span>Профиль</span>
+                    </div>
+                </a>
+            </div>
+            <div class="friends">
+                <h1>Друзья</h1>
+                <div class="friends-list">
+                    <ul>
+                        <li>
+                            <img src="../images/kutman.svg" alt="#" class="avatar">
+                            <div class="friends-text">
+                                <h3>Кутманшер Эрмеков</h3>
+                                <p>Школьник школы номер 66</p>
+                            </div>
+                            <img src="../images/chat.svg" class="chat-icon" alt="#">
+                        </li>
+                        <li>
+                            <img src="../images/davlet.svg" alt="#" class="avatar">
+                            <div class="friends-text">
+                                <h3>Давлет Азимов</h3>
+                                <p>Студент в Nomad College</p>
+                            </div>
+                            <img src="../images/chat.svg" class="chat-icon" alt="#">
+                        </li>
+                        <li>
+                            <img src="../images/saku.svg" alt="#" class="avatar">
+                            <div class="friends-text">
+                                <h3>Согдиана Асанова</h3>
+                                <p>Студент в Ala-Too University</p>
+                            </div>
+                            <img src="../images/chat.svg" class="chat-icon" alt="#">
+                        </li>
+                        <li>
+                            <img src="../images/aktan.svg" alt="#" class="avatar">
+                            <div class="friends-text">
+                                <h3>Тайлер Дырдыр</h3>
+                                <p>Студент колледжа Ала-Тоо</p>
+                            </div>
+                            <img src="../images/chat.svg" class="chat-icon" alt="#">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
