@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,6 +26,7 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue
     private Integer id;
+
     private String firstname;
     private String lastname;
     private String email;
@@ -32,16 +34,24 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
-    }
 
+    @Column(nullable = true)
+    private String avatarUrl;  // URL для аватарки пользователя
+
+    @Column(length = 1000)
+    private String bio;  // Биография пользователя
+
+    // Конструктор без пароля для безопасного создания пользователя
     public User(String firstname, String lastname, String email, String password){
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.password = password;
+        setPassword(password);  // Хэширование пароля при создании
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override
@@ -52,6 +62,12 @@ public class User implements UserDetails {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    // Хэширование пароля с использованием BCrypt
+    public void setPassword(String password) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        this.password = encoder.encode(password);  // Пароль сохраняется в хэшированном виде
     }
 
     @Override

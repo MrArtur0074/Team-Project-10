@@ -24,15 +24,15 @@
             return http
                     .csrf(csrf -> csrf.disable())
                     .authorizeHttpRequests(auth -> auth
-                            .requestMatchers("categories/add/").hasRole("ADMIN")
-                            .requestMatchers("categories/edit/**").hasRole("ADMIN")
-                            .requestMatchers("categories/delete/**").hasRole("ADMIN")
+                            .requestMatchers("/categories/add/").hasRole("ADMIN")
+                            .requestMatchers("/categories/edit/**").hasRole("ADMIN")
+                            .requestMatchers("/categories/delete/**").hasRole("ADMIN")
 
-                            .requestMatchers("saves/**").authenticated()
+                            .requestMatchers("/saves/**").authenticated()
 
-                            .requestMatchers("product/add/").authenticated()
-                            .requestMatchers("product/edit/**").authenticated()
-                            .requestMatchers("product/delete/**").authenticated()
+                            .requestMatchers("/product/add/").authenticated()
+                            .requestMatchers("/product/edit/**").authenticated()
+                            .requestMatchers("/product/delete/**").authenticated()
 
                             .anyRequest().permitAll()
                     )
