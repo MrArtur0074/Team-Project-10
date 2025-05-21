@@ -1,0 +1,33 @@
+@import "../../../styles/color-variables.css";
+.footMain {
+  background-color: var(--colorMain);
+}
+.footMain_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+}
+.footMain_text {
+  color: var(--colorTextWhite);
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.footText {
+  color: var(--colorTextWhite);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 1rem;
+}
+.footArrow {
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .footMain_block {
+    height: 15rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

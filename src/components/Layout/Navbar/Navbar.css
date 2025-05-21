@@ -1,0 +1,42 @@
+@import "../../../styles/color-variables.css";
+.navMain_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  margin-top: 2rem;
+}
+.navMain_text {
+  color: var(--colorMain);
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.navtext {
+  color: var(--colorTextBlack);
+  margin-left: 4rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.navtext:hover {
+  color: var(--colorMain);
+}
+.navMenu_btn {
+  display: none !important;
+}
+@media screen and (max-width: 768px) {
+  .navtext {
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .navtext {
+    display: none;
+  }
+  .navMenu_btn {
+    display: block !important;
+  }
+  .navMain_block {
+    justify-content: space-between;
+  }
+}

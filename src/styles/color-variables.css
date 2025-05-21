@@ -1,0 +1,21 @@
+:root {
+  --colorMain: #5a65ff;
+  --colorMainDark: #2d36b4;
+  --colorMainBright: #838bff;
+  --colorMainOnHover: #7b83ff;
+  --colorTextWhite: #ffffff;
+  --colorTextBlack: #000000;
+  --bgcolor1: #eff1ff;
+  --bgcolor2: #bbaebe;
+  --bgcolor3: #e3e3e3;
+  --colorViol: #aa76be;
+  --colorViolBright: #c595d7;
+  --colorDarkViol: #7f277e;
+  --colorDarkViolBright: #a64aa5;
+  --colorYell: #e0b703;
+  --colorYellBright: #eac522;
+  --colorFriendCardPrimary: #fff;
+  --colorFriendCardSecondary: #f7f8ff;
+  --colorGreen: #00d604;
+  --colorRed: #ff0004;
+}

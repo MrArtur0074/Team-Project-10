@@ -1,0 +1,130 @@
+@import "../../../styles/color-variables.css";
+.thdMain_block {
+  display: flex;
+  flex-direction: row;
+}
+.thdFirst_block {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 2rem;
+  z-index: 2;
+}
+.thdFirst_info {
+  width: 100%;
+  color: white;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2rem;
+}
+#thd1 {
+  background-color: var(--colorMainBright);
+  border-radius: 31px;
+}
+#thd1 > div {
+  background-color: var(--colorMain);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+#thd1 > h3 {
+  width: 80%;
+  margin-left: 1rem;
+}
+#thd2 {
+  background-color: var(--colorYellBright);
+  border-radius: 31px;
+}
+#thd2 > div {
+  background-color: var(--colorYell);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+#thd2 > h3 {
+  width: 80%;
+  margin-left: 1rem;
+}
+#thd3 {
+  background-color: var(--colorViolBright);
+  border-radius: 31px;
+}
+#thd3 > h3 {
+  width: 80%;
+  margin-left: 1rem;
+}
+#thd3 > div {
+  background-color: var(--colorViol);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+#thd4 {
+  background-color: var(--colorDarkViolBright);
+  margin-bottom: 3rem;
+  border-radius: 31px;
+}
+#thd4 > div {
+  background-color: var(--colorDarkViol);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+#thd4 > h3 {
+  width: 80%;
+  margin-left: 1rem;
+}
+.thdImg_block {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 50%;
+}
+.thdImg {
+  width: 50%;
+  z-index: 2;
+}
+.thdMain {
+  position: relative;
+  background-color: var(--bgcolor3);
+}
+.thdMain::after {
+  height: 100%;
+  content: " ";
+  position: absolute;
+  top: 0;
+  width: 40%;
+  right: 0;
+  background-color: var(--bgcolor2);
+  z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  .thdMain_block {
+    flex-direction: column;
+  }
+  .thdFirst_block {
+    width: 100%;
+  }
+  .thdFirst_info{
+    font-size: .7rem;
+  }
+  .thdImg_block {
+    justify-content: center;
+    width: 100%;
+  }
+  .thdImg {
+    width: 90%;
+    z-index: 2;
+  }
+  .thdMain {
+    position: relative;
+    background-color: var(--bgcolor3);
+    padding-bottom: 2rem;
+    
+  }
+  .thdMain::after {
+    height: 0;
+  }
+}

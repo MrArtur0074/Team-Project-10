@@ -1,0 +1,125 @@
+@import "../../../styles/color-variables.css";
+
+.sidebar {
+  position: fixed; /* Make it fixed to keep it full height */
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh; /* Full viewport height */
+  background-color: var(--colorMain);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+  color: #ffffff;
+  transition: width 0.3s ease;
+  z-index: 1000; /* Higher to ensure it stays above other content */
+  overflow-y: auto; /* Scrollable if content exceeds viewport */
+}
+
+.burger-menu {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  z-index: 1000;
+  height: 2.05rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: .2rem;
+}
+
+.sidebar.open {
+  width: 15%;
+}
+
+.sidebar.closed {
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar__logo {
+  align-self: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar__list {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.sidebar__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #ffffff;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.sidebar__item.closeditem {
+  width: 0;
+  overflow: hidden;
+}
+.sidebar__item.openitem {
+  width: auto;
+}
+.sidebar__item.active {
+  background-color: var(--colorMainOnHover);
+}
+
+.sidebar__item.active p,
+.sidebar__item.active div {
+  color: #ffffff;
+}
+.sidebar__item > div {
+  margin-right: 0.5rem;
+}
+
+.sidebar__item:hover {
+  background-color: var(--colorMainOnHover) !important;
+}
+
+.sidebar__logout {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 8rem;
+  height: 2rem;
+  font-size: 0.8rem;
+  transition: 0.2s;
+  margin-bottom: 5rem;
+}
+
+.sidebar__logout:hover {
+  background-color: #fff;
+  color: var(--colorMain) !important;
+  border: 2px solid #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+  .sidebar {
+    position: fixed; /* Make it fixed to keep it full height */
+    top: 0;
+    left: 0;
+    width: 0;
+  }
+  .sidebar.open {
+    width: 15rem;
+  }
+}

@@ -1,0 +1,99 @@
+@import "../styles/color-variables.css";
+.mainContainer {
+  width: 80vw;
+  margin: 0 auto;
+  margin-left: 16%;
+}
+.adBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--colorMain);
+  color: white;
+  border-radius: 10px;
+  padding: 4vmax;
+  position: relative;
+  margin-top: 4rem;
+}
+.adBlock_info {
+  width: 60%;
+}
+.adBlock_info > h2 {
+  margin-bottom: 1rem;
+}
+.adBlock_img {
+  position: absolute;
+  top: -20%;
+  right: 5rem;
+}
+.mainTabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  max-width: 100%;
+}
+.mainTabs > h2 {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.mainIntern > h2 {
+  background-color: var(--colorViol);
+}
+.mainCourse > h2 {
+  background-color: var(--colorDarkViol);
+}
+.mainStudent > h2 {
+  background-color: var(--colorMain);
+}
+
+.swiper-container {
+  padding-bottom: 3rem; /* Adjust space for navigation buttons */
+}
+
+.swiper-slide {
+  max-width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-navigation {
+  margin-top: 1rem;
+}
+
+.swiper-btn {
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.prev-btn {
+  order: 1;
+}
+
+.next-btn {
+  margin-left: 2rem;
+  order: 2;
+}
+@media screen and (max-width: 768px) {
+  .adBlock_info {
+    width: 100%;
+  }
+  .adBlock_img {
+    display: none;
+  }
+  .mainContainer {
+    margin-left: auto;
+  }
+}

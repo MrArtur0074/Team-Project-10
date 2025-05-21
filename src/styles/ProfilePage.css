@@ -1,0 +1,98 @@
+@import "./color-variables.css";
+
+.uspMain {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.uspMain_imgBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+.uspMain_img {
+  border-radius: 50%;
+  width: auto;
+  height: 100%;
+}
+.uspInfo_block {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.uspInfo_blockMini {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.uspInfo_btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--colorMain);
+  color: var(--colorMain);
+  padding: 0 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.uspInfo_desc {
+  padding: 1rem;
+  border-radius: 4px;
+  border: 2px solid var(--colorMain);
+  color: grey;
+  resize: none;
+}
+.uspInfo {
+  background-color: white;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+.uspInfo_inp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.intMain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media screen and (max-width: 950px) {
+  .uspMain {
+    flex-direction: column;
+  }
+  .uspMain_imgBlock {
+    width: 100%;
+  }
+  .uspMain_img {
+    width: 10rem;
+  }
+  .uspInfo_block {
+    width: 100%;
+  }
+  .uspInfo_btn {
+    height: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .uspInfo_inp {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .uspInfo_blockMini {
+    flex-direction: column;
+    text-align: center;
+  }
+  .uspInfo_desc {
+    height: 10rem;
+  }
+}

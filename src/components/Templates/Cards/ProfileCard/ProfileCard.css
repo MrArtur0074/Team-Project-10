@@ -1,0 +1,83 @@
+@import "../../../../styles/color-variables.css";
+
+.prCard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.prCard_first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.prCard_first > img {
+  width: 20%;
+  border-radius: 50%;
+}
+.prCard_info {
+  width: 80%;
+}
+.prCard_info > h3 {
+  margin-bottom: 1rem;
+}
+.prCard_scn {
+  margin-top: 1rem;
+}
+.prCard_interest {
+  display: flex;
+  flex-wrap: wrap;
+}
+.prCard_thr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.prCard_btn1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  height: 2.3rem;
+  border: 2px solid var(--colorMain);
+}
+.unclickedbtn1 {
+  background-color: var(--colorMain);
+  color: white;
+}
+.clickedbtn1 {
+  background-color: white;
+  color: var(--colorMain);
+}
+.prCard_btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: var(--colorMain);
+  color: white;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .prCard_first {
+    flex-direction: column;
+  }
+  .prCard_first > img {
+    align-self: center;
+    width: 50%;
+  }
+  .prCard_info {
+    width: 100%;
+  }
+}

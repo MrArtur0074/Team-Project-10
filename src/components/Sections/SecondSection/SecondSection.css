@@ -1,0 +1,80 @@
+@import "../../../styles/color-variables.css";
+
+.scnMain {
+  background-color: white;
+  padding: 3rem 0;
+}
+.scnMain_block {
+  display: flex;
+  flex-direction: column;
+}
+.scnMain_first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.scnFirst_round {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.scnMain_second {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4vmax;
+  align-items: center;
+  justify-content: space-between;
+}
+.scnCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  height: 18rem;
+  padding: 2rem;
+}
+.scnCard1 {
+  background-color: var(--colorViol);
+  border-radius: 20px 0px;
+}
+.scnCard2 {
+  background-color: var(--colorMain);
+}
+.scnCard3 {
+  background-color: var(--colorYell);
+  border-radius: 0px 20px;
+}
+@media screen and (max-width: 768px) {
+  .scnMain_first {
+    flex-direction: column;
+  }
+  .scnMain_first > h1 {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .scnFirst_round {
+    width: 100%;
+  }
+  .scnCard {
+    height: 15rem;
+    padding: 2rem;
+  }
+  .scnMain_second {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 375px) {
+  #arround1,
+  #arround2,
+  #arround3,
+  #arround4 {
+    display: none;
+  }
+}
